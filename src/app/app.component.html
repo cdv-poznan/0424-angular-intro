@@ -11,6 +11,31 @@
   Click me
 </button>
 
+<div class="count">
+  <!--
+  <div *ngIf="count > 2" class="clicks-count">
+    <ng-container *ngIf="count > 4"> {{ count }} </ng-container>
+  </div>
+  -->
+
+  <ng-container *ngIf="count > 10; else lessThan10">
+    More that 10 clicks: {{ count }}
+  </ng-container>
+
+  <ng-template #lessThan10>
+    <ng-container *ngIf="count > 5; else lessThan5">
+      More than 5
+    </ng-container>
+
+    <ng-template #lessThan5>
+      Less than 5
+    </ng-template>
+
+    and less than 10
+  </ng-template>
+
+</div>
+
 <div (mouseenter)="onEnter($event)">
   <!-- przypinanie wartości i nasłuchiwanie na wydarzenie -->
   <input [value]="name" (change)="onInputChange($event.target.value)" />
@@ -20,5 +45,3 @@
   <!-- wiązanie dwustronne -->
   <input [(ngModel)]="name" />
 </div>
-
-{{ name }}
