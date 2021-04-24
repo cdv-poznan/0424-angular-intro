@@ -23,17 +23,29 @@
   </ng-container>
 
   <ng-template #lessThan10>
-    <ng-container *ngIf="count > 5; else lessThan5">
-      More than 5
-    </ng-container>
+    <ng-container *ngIf="count > 5; else lessThan5"> More than 5 </ng-container>
 
-    <ng-template #lessThan5>
-      Less than 5
-    </ng-template>
+    <ng-template #lessThan5> Less than 5 </ng-template>
 
     and less than 10
   </ng-template>
+</div>
 
+<div class="ng-for section">
+  <h2>ngFor</h2>
+
+  <ul>
+    <li *ngFor="let user of users; let i = index">
+      <span>{{ i + 1 }}. </span>
+      <span>{{ user.name }}</span>
+      <span> ({{ user.id }})</span>
+
+      <span [ngSwitch]="user.role">
+        <span *ngSwitchCase="'Admin'">Administrator</span>
+        <span *ngSwitchDefault>User</span>
+      </span>
+    </li>
+  </ul>
 </div>
 
 <div (mouseenter)="onEnter($event)">

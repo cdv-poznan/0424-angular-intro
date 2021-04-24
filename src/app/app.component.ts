@@ -11,6 +11,24 @@ export class AppComponent {
   public isDisabled = false;
   public count = 0;
 
+  public users = [
+    {
+      id: 10,
+      name: 'Adrian',
+      role: 'Admin',
+    },
+    {
+      id: 17,
+      name: 'Ala',
+      role: 'User',
+    },
+    {
+      id: 21,
+      name: 'Marek',
+      role: 'Other',
+    },
+  ];
+
   constructor() {}
 
   onButtonClicked($event: MouseEvent): void {
