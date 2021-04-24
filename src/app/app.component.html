@@ -3,13 +3,16 @@
 <h3>{{ title }}</h3>
 
 <app-hello
-  [heading]="'Hello 1!'"
+  [heading]="'Hello!'"
   [expand]="true"
+  [clicks]="clicks"
   (headingClick)="onHelloHeadingClick($event)"
 ></app-hello>
 
 <app-hello
-  [heading]="'World 2'"
+  *ngIf="clicks % 3"
+  [heading]="'World'"
+  [clicks]="clicks"
   (headingClick)="onHelloHeadingClick($event)"
 ></app-hello>
 
