@@ -2,8 +2,7 @@
 
 <h3>{{ title }}</h3>
 
-<app-hello></app-hello>
-<app-hello></app-hello>
-
+<app-hello [heading]="'Hello 1!'" [expand]="true"></app-hello>
+<app-hello [heading]="'World 2'"></app-hello>
 
 <app-templates *ngIf="showTemplates"></app-templates>
