@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-changes',
@@ -10,13 +11,14 @@ export class ChangesComponent implements OnInit, OnChanges {
   @Input() public clicks: number;
   public random: string;
 
+  constructor(private titleService: Title) {}
+
   ngOnInit(): void {
     console.log('ChangesComponent:ngOnInit');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('ChangesComponent:ngOnChanges', changes);
-    this.random = this.getRandom();
+    this.titleService.setTitle(`clicks: ${changes.clicks.currentValue}`);
   }
 
   public getRandom(): string {
