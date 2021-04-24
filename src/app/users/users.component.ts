@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
-  constructor(private httpClient: HttpClient) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.httpClient.get('https://api.github.com/users/juszczak');
+    const user = this.userService.getUser();
+    console.log('USER:', user);
   }
 }
