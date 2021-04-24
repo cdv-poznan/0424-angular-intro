@@ -1,59 +1,9 @@
 <!-- <router-outlet></router-outlet> -->
 
-<h1>{{ title }}</h1>
+<h3>{{ title }}</h3>
 
-<button
-  (click)="onButtonClicked($event)"
-  (mouseenter)="onEnter($event)"
-  [disabled]="isDisabled"
-  [class.clicked]="count > 3"
->
-  Click me
-</button>
+<app-hello></app-hello>
+<app-hello></app-hello>
 
-<div class="count">
-  <!--
-  <div *ngIf="count > 2" class="clicks-count">
-    <ng-container *ngIf="count > 4"> {{ count }} </ng-container>
-  </div>
-  -->
 
-  <ng-container *ngIf="count > 10; else lessThan10">
-    More that 10 clicks: {{ count }}
-  </ng-container>
-
-  <ng-template #lessThan10>
-    <ng-container *ngIf="count > 5; else lessThan5"> More than 5 </ng-container>
-
-    <ng-template #lessThan5> Less than 5 </ng-template>
-
-    and less than 10
-  </ng-template>
-</div>
-
-<div class="ng-for section">
-  <h2>ngFor</h2>
-
-  <ul>
-    <li *ngFor="let user of users; let i = index">
-      <span>{{ i + 1 }}. </span>
-      <span>{{ user.name }}</span>
-      <span> ({{ user.id }})</span>
-
-      <span [ngSwitch]="user.role">
-        <span *ngSwitchCase="'Admin'">Administrator</span>
-        <span *ngSwitchDefault>User</span>
-      </span>
-    </li>
-  </ul>
-</div>
-
-<div (mouseenter)="onEnter($event)">
-  <!-- przypinanie wartości i nasłuchiwanie na wydarzenie -->
-  <input [value]="name" (change)="onInputChange($event.target.value)" />
-</div>
-
-<div>
-  <!-- wiązanie dwustronne -->
-  <input [(ngModel)]="name" />
-</div>
+<app-templates *ngIf="showTemplates"></app-templates>
