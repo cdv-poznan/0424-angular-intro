@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { APP_CONFIG } from './app.config';
 import { ChangesComponent } from './changes/changes.component';
 import { HeadingComponent } from './hello/heading/heading.component';
 import { HelloComponent } from './hello/hello.component';
@@ -13,7 +14,14 @@ import { UsersComponent } from './users/users.component';
 @NgModule({
   declarations: [AppComponent, HelloComponent, TemplatesComponent, HeadingComponent, ChangesComponent, UsersComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
-  providers: [],
+  providers: [
+    {
+      provide: APP_CONFIG,
+      useValue: {
+        title: 'CDV App',
+      },
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

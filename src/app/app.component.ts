@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppConfig, APP_CONFIG } from './app.config';
 
 @Component({
   selector: 'cdv-app',
@@ -11,7 +12,7 @@ export class AppComponent {
   public showTemplates = false;
   public clicks = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, @Inject(APP_CONFIG) private config: AppConfig) {}
 
   public onHelloHeadingClick(clicks: number): void {
     this.clicks += clicks;
