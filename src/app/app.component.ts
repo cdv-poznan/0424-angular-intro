@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, ElementRef, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppConfig, APP_CONFIG } from './app.config';
 
@@ -26,7 +26,9 @@ export class AppComponent {
     };
   }
 
-  constructor(private router: Router, @Inject(APP_CONFIG) private config: AppConfig) {}
+  constructor(private router: Router, @Inject(APP_CONFIG) private config: AppConfig, private elementRef: ElementRef) {
+    console.log(elementRef);
+  }
 
   public onHelloHeadingClick(clicks: number): void {
     this.clicks += clicks;
