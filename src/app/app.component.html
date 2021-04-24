@@ -16,8 +16,6 @@
   (headingClick)="onHelloHeadingClick($event)"
 ></app-hello>
 
-<div>
-  {{ clicks }}
-</div>
+<app-changes [clicks]="clicks"></app-changes>
 
 <app-templates *ngIf="showTemplates"></app-templates>

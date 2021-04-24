@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello/hello.component';
 import { TemplatesComponent } from './templates/templates.component';
 import { HeadingComponent } from './hello/heading/heading.component';
+import { ChangesComponent } from './changes/changes.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloComponent, TemplatesComponent, HeadingComponent],
+  declarations: [AppComponent, HelloComponent, TemplatesComponent, HeadingComponent, ChangesComponent],
   imports: [BrowserModule, FormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
