@@ -1,3 +1,24 @@
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
 
 <h1>{{ title }}</h1>
+
+<button
+  (click)="onButtonClicked($event)"
+  (mouseenter)="onEnter($event)"
+  [disabled]="isDisabled"
+  [class.clicked]="count > 3"
+>
+  Click me
+</button>
+
+<div (mouseenter)="onEnter($event)">
+  <!-- przypinanie wartości i nasłuchiwanie na wydarzenie -->
+  <input [value]="name" (change)="onInputChange($event.target.value)" />
+</div>
+
+<div>
+  <!-- wiązanie dwustronne -->
+  <input [(ngModel)]="name" />
+</div>
+
+{{ name }}
