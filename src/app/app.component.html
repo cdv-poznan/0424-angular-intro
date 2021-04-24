@@ -21,3 +21,9 @@
 <app-templates *ngIf="showTemplates"></app-templates>
 
 <app-users></app-users>
+
+<div class="preview section" [ngClass]="clicks % 2 == 0 ? 'even' : 'odd'"></div>
+
+<div class="preview section" [ngClass]="previewClassNames"></div>
+
+<div class="preview section" [ngStyle]="previewStyles"></div>
