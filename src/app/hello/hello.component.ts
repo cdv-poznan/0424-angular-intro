@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-hello',
@@ -8,14 +8,20 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class HelloComponent implements OnInit {
   public static counter = 0;
-  public counter: number;
+  public id: number;
   @Input() public heading: string;
   @Input() public expand = false;
 
+  @Output() public headingClick = new EventEmitter<number>();
+
   constructor() {
     HelloComponent.counter++;
-    this.counter = HelloComponent.counter;
+    this.id = HelloComponent.counter;
   }
 
   ngOnInit(): void {}
+
+  public onHeadingClick($event: MouseEvent): void {
+    this.headingClick.emit(this.id);
+  }
 }

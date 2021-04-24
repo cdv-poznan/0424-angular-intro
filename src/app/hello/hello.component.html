@@ -1,3 +1,7 @@
-<app-heading [text]="heading" class="heading"></app-heading>
+<app-heading
+  [text]="heading"
+  class="heading"
+  (click)="onHeadingClick($event)"
+></app-heading>
 
 <p>expanded: {{ expand }}</p>

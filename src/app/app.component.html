@@ -2,7 +2,19 @@
 
 <h3>{{ title }}</h3>
 
-<app-hello [heading]="'Hello 1!'" [expand]="true"></app-hello>
-<app-hello [heading]="'World 2'"></app-hello>
+<app-hello
+  [heading]="'Hello 1!'"
+  [expand]="true"
+  (headingClick)="onHelloHeadingClick($event)"
+></app-hello>
+
+<app-hello
+  [heading]="'World 2'"
+  (headingClick)="onHelloHeadingClick($event)"
+></app-hello>
+
+<div>
+  {{ clicks }}
+</div>
 
 <app-templates *ngIf="showTemplates"></app-templates>

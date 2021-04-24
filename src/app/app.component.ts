@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public title = 'Angular Intro';
   public showTemplates = false;
+  public clicks = 0;
+
+  public onHelloHeadingClick(clicks: number): void {
+    this.clicks += clicks;
+  }
 }
