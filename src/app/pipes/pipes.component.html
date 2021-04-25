@@ -1,3 +1,11 @@
+<h3>AsyncPipe</h3>
+<p>async value 1: {{ promise1 | async | json }}</p>
+<p>async value 2: {{ promise2 | async | translate }}</p>
+<p>async value 3: {{ promise2 | async | translate:'en' | uppercase }}</p>
+
+<h3>JsonPipe</h3>
+<p>{{ obj | json }}</p>
+
 <h2>Custom Pipes</h2>
 
 <input [(ngModel)]="phrase" placeholder="Phrase" />

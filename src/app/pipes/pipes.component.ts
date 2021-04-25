@@ -11,7 +11,15 @@ export class PipesComponent implements OnInit {
   public phrase = 'hello';
   public lang = 'pl';
 
-  constructor() {}
+  public obj = {
+    hello: {
+      en: ['Hello'],
+      pl: ['Cześć'],
+    },
+  };
+
+  public promise1 = new Promise(resolve => setTimeout(resolve, 2000, this.obj));
+  public promise2 = new Promise(resolve => setTimeout(resolve, 3000, 'hello'));
 
   ngOnInit(): void {
     this.timestamp = Date.now();
