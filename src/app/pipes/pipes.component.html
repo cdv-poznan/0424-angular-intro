@@ -1,5 +1,18 @@
 <h2>Custom Pipes</h2>
 
+<input [(ngModel)]="phrase" placeholder="Phrase" />
+<input [(ngModel)]="lang" placeholder="Lang" />
+<p> {{ phrase | translate:lang }} </p>
+
+
+<h3>Translate</h3>
+<p>{{ 'hello' | translate }}</p>
+<p>{{ 'hello' | translate:'pl' }}</p>
+<p>{{ 'hello' | translate:'en' }}</p>
+<p>{{ 'goodbye' | translate:'pl' }}</p>
+<p>{{ 'goodbye' | translate:'en' }}</p>
+<p>{{ 'asd' | translate }}</p>
+
 <h3>Multiply</h3>
 <p>{{ 123 | multiply:2 }}</p>
 <p>{{ timestamp | multiply:3 }}</p>

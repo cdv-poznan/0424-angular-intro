@@ -8,6 +8,8 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 })
 export class PipesComponent implements OnInit {
   public timestamp: number;
+  public phrase = 'hello';
+  public lang = 'pl';
 
   constructor() {}
 
