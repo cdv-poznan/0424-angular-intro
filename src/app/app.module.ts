@@ -15,6 +15,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { TemplatesComponent } from './templates/templates.component';
 import { UsersComponent } from './users/users.component';
 import { TranslatePipe } from './pipes/translate.pipe';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TranslatePipe } from './pipes/translate.pipe';
     IntroComponent,
     MultiplyPipe,
     TranslatePipe,
+    RxjsComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [
