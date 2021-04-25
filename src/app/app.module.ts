@@ -11,9 +11,10 @@ import { HelloComponent } from './hello/hello.component';
 import { TemplatesComponent } from './templates/templates.component';
 import { UsersComponent } from './users/users.component';
 import { HighlightDirective } from './highlight.directive';
+import { PipesComponent } from './pipes/pipes.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloComponent, TemplatesComponent, HeadingComponent, ChangesComponent, UsersComponent, HighlightDirective],
+  declarations: [AppComponent, HelloComponent, TemplatesComponent, HeadingComponent, ChangesComponent, UsersComponent, HighlightDirective, PipesComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [
     {
