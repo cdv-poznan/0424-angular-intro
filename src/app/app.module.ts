@@ -8,14 +8,26 @@ import { APP_CONFIG } from './app.config';
 import { ChangesComponent } from './changes/changes.component';
 import { HeadingComponent } from './hello/heading/heading.component';
 import { HelloComponent } from './hello/hello.component';
+import { HighlightDirective } from './highlight.directive';
+import { IntroComponent } from './intro/intro.component';
+import { MultiplyPipe } from './pipes/multiply.pipe';
+import { PipesComponent } from './pipes/pipes.component';
 import { TemplatesComponent } from './templates/templates.component';
 import { UsersComponent } from './users/users.component';
-import { HighlightDirective } from './highlight.directive';
-import { PipesComponent } from './pipes/pipes.component';
-import { IntroComponent } from './intro/intro.component';
 
 @NgModule({
-  declarations: [AppComponent, HelloComponent, TemplatesComponent, HeadingComponent, ChangesComponent, UsersComponent, HighlightDirective, PipesComponent, IntroComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    TemplatesComponent,
+    HeadingComponent,
+    ChangesComponent,
+    UsersComponent,
+    HighlightDirective,
+    PipesComponent,
+    IntroComponent,
+    MultiplyPipe,
+  ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [
     {
