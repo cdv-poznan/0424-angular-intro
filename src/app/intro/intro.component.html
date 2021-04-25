@@ -1,0 +1,36 @@
+<h3>{{ title }}</h3>
+
+<app-pipes></app-pipes>
+
+<app-hello
+  [heading]="'Hello!'"
+  [expand]="true"
+  [clicks]="clicks"
+  (headingClick)="onHelloHeadingClick($event)"
+></app-hello>
+
+<app-hello
+  *ngIf="clicks % 3"
+  [heading]="'World'"
+  [clicks]="clicks"
+  (headingClick)="onHelloHeadingClick($event)"
+></app-hello>
+
+<app-changes [clicks]="clicks"></app-changes>
+
+<app-templates *ngIf="showTemplates"></app-templates>
+
+<app-users colorHighlight="green"></app-users>
+
+<div class="preview section" colorHighlight="magenta"></div>
+
+<div ngNonBindable>
+  {{ 4 + 4 }}
+</div>
+
+<!--
+<div class="preview section" [ngClass]="clicks % 2 == 0 ? 'even' : 'odd'"></div>
+<div class="preview section" [ngClass]="previewClassNames"></div>
+<div class="preview section" [ngStyle]="previewStyles"></div>
+-->
+
